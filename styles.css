@@ -37,6 +37,7 @@ nav ul {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+  --body-color2: rgb(255, 255, 255);
 }
 
 /* BASE */
@@ -76,8 +77,17 @@ h3,
   height: 1px;
   background: linear-gradient(
     270deg,
-    hsla(var(--hue), 36%, 57%, 1) 0%,
-    hsla(var(--hue), 65%, 88%, 0.34) 100%
+    hsla(var(--hue), 36%, 57%, 1),
+    hsla(var(--hue), 65%, 88%, 0.34)
+  );
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34),
+    hsla(var(--hue), 36%, 57%, 1)
   );
 }
 
@@ -201,6 +211,10 @@ nav.show div.icon-close {
   padding: 5rem 0;
 }
 
+.section .title {
+  margin-bottom: 1rem;
+}
+
 .grid {
   display: grid;
   gap: 2rem;
@@ -255,6 +269,54 @@ main {
 }
 
 #home .text p {
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+/* ABOUT */
+#about {
+  background-color: var(--body-color2);
+  overflow: hidden;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--base-color-second);
+  position: absolute;
+  top: -8.3%;
+  left: -33%;
+  z-index: 0;
+}
+
+#about .image,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .text {
+  margin: 0 1.5rem;
+}
+
+#about .text h1 {
+  margin-bottom: 1rem;
+}
+
+#about .text p {
   margin-bottom: 2rem;
   max-width: 100%;
 }
