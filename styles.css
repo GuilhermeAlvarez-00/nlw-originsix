@@ -41,6 +41,10 @@ nav ul {
 }
 
 /* BASE */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 400 1rem 'DM Sans', sans-serif;
   color: var(--text-color);
@@ -114,6 +118,10 @@ h3,
   background: var(--body-color);
 }
 
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
 nav {
   width: 100%;
   height: var(--header-height);
@@ -124,7 +132,6 @@ nav {
 
 nav ul li {
   text-align: center;
-  position: relative;
 }
 
 nav ul li a {
@@ -138,7 +145,7 @@ nav ul li a:hover {
 
 nav ul li a::after {
   content: '';
-  width: 0;
+  width: 0%;
   height: 2px;
   background: var(--base-color);
   position: absolute;
@@ -154,6 +161,12 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
 }
 
 nav.show .menu {
@@ -161,13 +174,20 @@ nav.show .menu {
   visibility: visible;
 
   background: var(--body-color);
-  width: 100%;
+
   height: 100vh;
+  width: 100vw;
+
   position: fixed;
   top: 0;
   left: 0;
+
   display: grid;
   place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
 }
 
 nav.show ul.grid {
@@ -185,11 +205,15 @@ nav div.icon-menu {
   right: 1.5rem;
 }
 
-nav div.icon-close {
+nav .icon-close {
   visibility: hidden;
   opacity: 0;
+
   position: absolute;
+  top: -1.5rem;
   right: 1.5rem;
+
+  transition: 0.2s;
 }
 
 nav.show div.icon-menu {
@@ -200,6 +224,7 @@ nav.show div.icon-menu {
 nav.show div.icon-close {
   visibility: visible;
   opacity: 1;
+  top: 1.5rem;
 }
 
 /* LAYOUT */
@@ -213,6 +238,18 @@ nav.show div.icon-close {
 
 .section .title {
   margin-bottom: 1rem;
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header p {
+  color: var(--title-color);
+}
+
+.section header strong {
+  color: var(--base-color);
 }
 
 .grid {
@@ -319,4 +356,29 @@ main {
 #about .text p {
   margin-bottom: 2rem;
   max-width: 100%;
+}
+
+/* SERVICES */
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  color: var(--base-color);
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
