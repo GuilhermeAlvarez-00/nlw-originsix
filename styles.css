@@ -576,6 +576,77 @@ footer .social a:hover {
     height: 3.125rem;
   }
 
+  /* MEDIA-ABOUT */
+  #about .container {
+    grid-auto-flow: column;
+  }
+
+  #about .grid {
+    gap: 4rem;
+  }
+
+  #about .text {
+    width: 100%;
+  }
+
+  #about .image img {
+    width: fit-content;
+    max-width: 38.5rem;
+  }
+
+  #about .image::before {
+    height: 20rem;
+    top: -10%;
+  }
+
+  /* MEDIA-SERVICES */
+  div.cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* MEDIA-TESTIMONIALS */
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* MEDIA-CONTACT */
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width: 25rem;
+  }
+
+  /* MEDIA-FOOTER */
+  footer .section {
+    padding: 3.75rem 0;
+  }
+
+  footer .container {
+    grid-auto-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 968px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
   /* MEDIA-NAVIGATION  */
   nav .menu {
     opacity: 1;
@@ -618,74 +689,13 @@ footer .social a:hover {
     text-align: left;
   }
 
-  /* MEDIA-ABOUT */
-  #about .container {
-    grid-auto-flow: column;
-  }
-
-  #about .grid {
-    gap: 4rem;
-  }
-
-  #about .text {
-    width: 100%;
-  }
-
-  #about .image img {
-    width: fit-content;
-    max-width: 38.5rem;
-  }
-
-  #about .image::before {
-    height: 20rem;
-    top: -10%;
-  }
-
   /* MEDIA-SERVICES */
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card {
     padding-left: 3rem;
     padding-right: 3rem;
-  }
-
-  /* MEDIA-TESTIMONIALS */
-  #testimonials .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* MEDIA-CONTACT */
-  #contact .container {
-    grid-auto-flow: column;
-    align-items: center;
-  }
-
-  #contact .text {
-    max-width: 25rem;
-  }
-
-  /* MEDIA-FOOTER */
-  footer .section {
-    padding: 3.75rem 0;
-  }
-
-  footer .container {
-    grid-auto-flow: column;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  footer .logo {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
   }
 }
